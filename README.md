@@ -57,7 +57,7 @@ The pattern string is made up of symbols (see table) representing components of 
 | `#`     | Ordinal suffix. Append to symbol representing a numeric value for the English ordinal suffix. (1st, 2nd, 3rd, 4th, ...) e.g. `(new Date("2013-05-23")).format("D#' of 'MMMM, YYYY")` returns "23rd of May, 2013". Not supported for fractions of a second or timezone offsets
 | `'...'` | Literal character sequences
 | `"..."` | Literal character sequences
-| `\`     | Single-character escape. Useful for outputting apostrophes. Remeber you need to double escape the backslash for JavaScript strings too. e.g. (new Date(1999-07-03)).format("DD MMM \\'YY"); outputs "03 Jul '99"
+| `\`     | Single-character escape. Useful for outputting apostrophes. Remeber you need to double escape the backslash for JavaScript strings too. e.g. (`new Date(1999-07-03)).format("DD MMM \\'YY");` outputs "03 Jul '99"
 
 Any sequence of characters that does not match any of the above symbols is output as a literal string.
 
