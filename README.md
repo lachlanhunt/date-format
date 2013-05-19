@@ -21,8 +21,8 @@ The pattern string is made up of symbols (see table) representing components of 
 | `DD`    | day of month, number, leading zero
 | `DDD`   | day of year, number, 3 digits
 | `DDDD`  | count of days in month, number
-| `yy`    | week-numbering year, 2 digit (Alternative symbol: WW)
-| `yyyy`  | week-numbering year, 4 digit (Alternative symbol: WWWW)
+| `yy`    | week-numbering year, 2 digit (Alternative symbol: `WW`)
+| `yyyy`  | week-numbering year, 4 digit (Alternative symbol: `WWWW`)
 | `w`     | week, number, no leading zero
 | `ww`    | week, number, leading zero
 | `d`     | day of week, number, 1 (Monday) to 7 (Sunday)
@@ -46,10 +46,10 @@ The pattern string is made up of symbols (see table) representing components of 
 | `f`     | fraction of second, number, 1 digit
 | `ff`    | fraction of second, number, 2 digits
 | `fff`   | fraction of second, number, 3 digits
-| `a`     | meridiem, 1 letter, lowercase (a or p) (Alternative symbol: p)
-| `aa`    | meridiem, 2 letter, lowercase (am or pm) (Alternative symbol: pp)
-| `A`     | meridiem, 1 letter, uppercase (A or P) (Alternative symbol: P)
-| `AA`    | meridiem, 2 letter, uppercase (AM or PM) (Alternative symbol: PP)
+| `a`     | meridiem, 1 letter, lowercase (a or p) (Alternative symbol: `p`)
+| `aa`    | meridiem, 2 letter, lowercase (am or pm) (Alternative symbol: `pp`)
+| `A`     | meridiem, 1 letter, uppercase (A or P) (Alternative symbol: `P`)
+| `AA`    | meridiem, 2 letter, uppercase (AM or PM) (Alternative symbol: `PP`)
 | `z`     | timezone, basic format, +HHmm or -HHmm or literal 'Z'
 | `zz`    | timezone, basic format, +HHmm or -HHmm
 | `Z`     | timezone, extended format, +HH:mm or -HH:mm or literal 'Z'
