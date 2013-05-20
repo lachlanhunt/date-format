@@ -202,27 +202,27 @@
             case "C":
                 // Century component of the year, no leading zero
                 temp = date.getUTCFullYear();
-                value = sign(y) * Math.floor(Math.abs(y) / 100);
+                value = sign(temp) * Math.floor(Math.abs(temp) / 100);
                 return value + (token.suffix ? suffix(value) : '');
             case "CC":
                 // Century component of the year, leading zero
                 temp = date.getUTCFullYear();
-                value = sign(y) * Math.floor(Math.abs(y) / 100);
+                value = sign(temp) * Math.floor(Math.abs(temp) / 100);
                 return pad(value, 2) + (token.suffix ? suffix(value) : '');
 
             case "c":
                 // Ordinal century number, no leading zero
                 temp = date.getUTCFullYear();
-                value = y > 0 ?
-                        Math.floor(Math.abs((y - 1) / 100)) + 1 :
-                        Math.floor(Math.abs(y / 100)) + 1;
+                value = temp > 0 ?
+                        Math.floor(Math.abs((temp - 1) / 100)) + 1 :
+                        Math.floor(Math.abs(temp / 100)) + 1;
                 return value + (token.suffix ? suffix(value) : '');
             case "cc":
                 // Ordinal century number, leading zero
-                var y = date.getUTCFullYear();
-                value = y > 0 ?
-                        Math.floor(Math.abs((y - 1) / 100)) + 1 :
-                        Math.floor(Math.abs(y / 100)) + 1;
+                temp = date.getUTCFullYear();
+                value = temp > 0 ?
+                        Math.floor(Math.abs((temp - 1) / 100)) + 1 :
+                        Math.floor(Math.abs(temp / 100)) + 1;
                 return pad(value, 2) + (token.suffix ? suffix(value) : '');
 
             case "E":
