@@ -1,5 +1,5 @@
-Date Formatting Utility
-=======================
+date-format.js
+==============
 
 This utility provides a simplified date formatting function.
 
@@ -64,20 +64,20 @@ Any sequence of characters that does not match any of the above symbols is outpu
 The `options` parameter accepts an object.
 
     {
-    	offset: 0; // Value in milliseconds representing the value of (UTC - localTime).
-    	locale: "en"
+        offset: 0; // Value in milliseconds representing the value of (UTC - localTime).
+        locale: "en"
     }
 
-Note: For `offset`, negative values represent timezones ahead of UTC (UTC+10:00), positive values are behind.
+Note: For `offset`, negative values represent timezones ahead of UTC, positive values are behind.
 
 e.g.
-    {offset: 36000000} // UTC+10:00
-    {offset: -5400000} // UTC-01:30
+    {offset: -36000000} // UTC+10:00
+    {offset: 5400000} // UTC-01:30
 
 The locale is a BCP 47 language tag that matches that used in the [Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/DateTimeFormat) API.  In this utility, this affects the langauge of month names and day names. The default is "en".
 
 Timezone Lookup
-===============
+---------------
 
 A utility function for looking up a timezone for a specified region is available.
 
@@ -94,8 +94,7 @@ The value may be passed directly as the offset in the `options` parameter for th
 
 That will output the local time in Sydney for the specified date object. In this case, it will be "2013 May 19, 08:40".
 
-Examples
-========
+#Examples
 
 For all examples, assume:
 
