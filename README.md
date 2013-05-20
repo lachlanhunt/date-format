@@ -61,6 +61,39 @@ The pattern string is made up of symbols (see table) representing components of 
 
 Any sequence of characters that does not match any of the above symbols is output as a literal string.
 
+The `options` parameter accepts an object.
+
+    {
+    	offset: 0; // Value in milliseconds representing the value of (UTC - localTime).
+    	locale: "en"
+    }
+
+Note: For `offset`, negative values represent timezones ahead of UTC (UTC+10:00), positive values are behind.
+
+e.g.
+    {offset: 36000000} // UTC+10:00
+    {offset: -5400000} // UTC-01:30
+
+The locale is a BCP 47 language tag that matches that used in the [Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/DateTimeFormat) API.  In this utility, this affects the langauge of month names and day names. The default is "en".
+
+Timezone Lookup
+===============
+
+A utility function for looking up a timezone for a specified region is available.
+
+    date.lookupTimezoneOffset(timeZone);
+
+The `timeZone` parameter is a string representing a region defined in the [ISO timezone database](http://www.iana.org/time-zones).  e.g. `"Australia/Sydney"`
+
+This will return the appropriate offset value in milliseconds according to local time for the specified region. This method requires support for the [Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/DateTimeFormat) API.
+
+The value may be passed directly as the offset in the `options` parameter for th `format()` function.
+
+    var date = new Date("2013-05-18T22:40:00.000Z");
+    date.format("YYYY MMMM D, HH:mm", {offset: date.lookupTimezoneOffset("Australia/Sydney")});
+
+That will output the local time in Sydney for the specified date object. In this case, it will be "2013 May 19, 08:40".
+
 Examples
 ========
 
